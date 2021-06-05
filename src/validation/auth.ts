@@ -2,9 +2,7 @@ import { NextFunction, Request, Response } from "express";
 
 
 
-
-
-export default class LoginValidation {
+export default class AuthValidation {
 
 
 
@@ -27,7 +25,5 @@ export default class LoginValidation {
 
 
 }
-
-
 
 

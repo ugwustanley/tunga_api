@@ -1,14 +1,11 @@
 import { Request, Response, Router } from "express";
-import LoginValidation from "../validation/login";
+import AuthValidation from "../validation/auth";
+import AuthController from "../controller/auth";
 
 const route = Router();
 
-route.post("/login", LoginValidation.login, (req: Request, res: Response) => {
 
-    console.log(req.body)
-
-    res.send("This is the login page");
-})
+route.post("/login", AuthValidation.login,AuthController.login)
 
 
 route.post("/register", (req, res) => {
