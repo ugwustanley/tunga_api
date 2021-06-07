@@ -28,7 +28,7 @@ var AuthController = /** @class */ (function () {
         res.send(user);
     };
     AuthController.set_verified = function (req, res) {
-        var _a = req.query, email = _a.email, isverified = _a.isverified;
+        var _a = req.body, email = _a.email, isverified = _a.isverified;
         //    console.log(email , isverified)
         var user = auth.setisverified(email, isverified);
         res.send({ message: "Account Successfully updated", data: user });

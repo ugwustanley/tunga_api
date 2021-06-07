@@ -46,7 +46,7 @@ class AuthController {
 
     static set_verified(req: Request, res: Response) {
 
-        const { email , isverified } = req.query;
+        const { email , isverified } = req.body;
 
     //    console.log(email , isverified)
 
