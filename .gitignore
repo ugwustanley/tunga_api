@@ -34,6 +34,9 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
+# Build folder
+build
+
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
@@ -41,8 +44,7 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Build folder
-build/
+
 
 # TypeScript v1 declaration files
 typings/
