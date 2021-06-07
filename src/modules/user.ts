@@ -37,6 +37,17 @@ export default class User {
         this._lastLogin = date;
     }
 
+    get toJson() {
+        return {
+            name: this.name,
+            email: this.email,
+            password: "****",
+            isVerified: this.isVerified === true ? "Yes" : "No",
+            lastLogin: this.lastLogin
+        }
+    }
+
+    
 }
 
 

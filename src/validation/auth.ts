@@ -18,9 +18,31 @@ export default class AuthValidation {
         if (pwd.length < 6) throw "Password mush not be less than six (6) characters";
 
 
-        next();
+        // return next();
     }
 
+
+    /**
+     * Handles Validation of incoming register http request
+     */
+    static register(req: Request, res: Response, next: NextFunction) {
+
+        const { name, email, password } = req.body;
+
+        if (typeof name !== "string") throw "Name is invalid";
+
+        if (typeof email !== "string") throw "Email is invalid";
+
+        if (typeof password !== "string") throw "Password is invalid";
+
+        if (!name) throw "Name is required";
+
+        if (!email) throw "Email is required";
+
+        if (!password) throw "Password is required";
+
+        return next()
+    }
 
 
 

@@ -33,6 +33,19 @@ var User = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(User.prototype, "toJson", {
+        get: function () {
+            return {
+                name: this.name,
+                email: this.email,
+                password: "****",
+                isVerified: this.isVerified === true ? "Yes" : "No",
+                lastLogin: this.lastLogin
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
     return User;
 }());
 exports.default = User;

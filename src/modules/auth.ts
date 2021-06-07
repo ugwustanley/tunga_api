@@ -8,8 +8,6 @@ export default class Auth {
     users: Array<User> = []
 
     constructor() {
-        // const user1 = new User("sarah", "sarah@yahoo.com", "123456");
-        // const user2 = new User("paul", "paul@outlook.com", "password");
 
         this.users = []
     }
@@ -30,7 +28,36 @@ export default class Auth {
     }
 
 
+    register(name: string, email: string, pwd: string) {
 
+        const user = new User(name, email, pwd);
+
+        this.users.push(user);
+
+        return user.toJson
+    }
+
+    listOfUser() {
+
+        // const listOfUser = [];
+
+        // for (let user of this.users){
+        //     listOfUser.push(user.toJson)
+        // }
+
+        // return listOfUsers
+
+        return this.users.map((user) => user.toJson);
+    }
+
+    getUserByEmail(email: string) {
+
+        const user = this.users.find((user) => user.email.toLowerCase() === email.toLowerCase());
+
+        if (!user) throw "No matching user found";
+
+        return user.toJson;
+    }
 
 }
 

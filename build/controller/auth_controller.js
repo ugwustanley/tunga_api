@@ -22,11 +22,6 @@ var AuthController = /** @class */ (function () {
         var list = auth.listOfUser();
         res.send(list);
     };
-    AuthController.get_user_by_email = function (req, res) {
-        var email = req.query.email;
-        var user = auth.getUserByEmail(email || "");
-        res.send(user);
-    };
     return AuthController;
 }());
 exports.default = AuthController;
