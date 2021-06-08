@@ -6,7 +6,7 @@ const route = Router();
 
 route.get("/user", AuthController.get_user_by_email);
 
-route.put("/isverified", AuthController.set_verified);
+route.patch("/isverified", AuthController.set_verified);
 
 route.get("/users", AuthController.list_of_users);
 
